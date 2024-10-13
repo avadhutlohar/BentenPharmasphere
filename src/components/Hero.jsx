@@ -1,5 +1,6 @@
 import React from "react";
 import HomeBG from "../assets/HomeBG.jpg";
+import { CiCircleChevRight } from "react-icons/ci";
 
 const Hero = () => {
   return (
@@ -17,8 +18,11 @@ const Hero = () => {
           PHARMACIST TRAINING, PHARMACY CONSULTATION, DOCUMENT ARCHIVING AND
           ETHICS COMMITTEE REGISTRATION SERVICES
         </h1>
-        <button className= "mt-20 bg-blue-500 text-white px-4 py-2 rounded-md">
-          Get Started
+        <button className="mt-20 w-56 h-16 font-semibold bg-blue-500 text-white px-4 py-2 rounded-md text-2xl">
+          <span className="flex flex-row items-center justify-center gap-2">
+            Get Started
+            <CiCircleChevRight />
+          </span>
         </button>
       </div>
     </div>

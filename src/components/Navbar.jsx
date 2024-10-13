@@ -1,13 +1,15 @@
 import React from "react";
+import logo from "../assets/logo1.png";
 import { CiCircleChevDown } from "react-icons/ci";
 
 const Navbar = () => {
   return (
     <nav className="grid grid-cols-2 bg-transparent text-white p-4 absolute w-full z-10">
-      <div className="text-lg font-bold flex items-center justify-center">
+      <div className="text-lg font-bold flex items-center justify-center h-24">
+        <img src={logo} alt="logo" className="h-24" />
         <h1 className="text-2xl font-bold">Benten-Pharmasphere</h1>
       </div>
-      <div className="flex flex-row space-x-8 relative">
+      <div className="flex flex-row justify-center items-center font-semibold text-xl space-x-8 relative">
         <a href="#" className="hover:text-teal-400">
           Home
         </a>
