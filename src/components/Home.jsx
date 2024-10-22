@@ -5,12 +5,21 @@ import ImageSection from './ImageSection';
 function Home() {
   const imageSectionRef = useRef(null);
 
+  const scrollToImageSection = () => {
+    if (imageSectionRef.current) {
+      imageSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div>
-      <Hero scrollToImageSection={() => imageSectionRef.current.scrollIntoView({ behavior: 'smooth' })} />
-      <ImageSection ref={imageSectionRef} />
+      <Hero onScrollToImageSection={scrollToImageSection} />
+      <div ref={imageSectionRef}>
+        <ImageSection />
+      </div>
     </div>
   );
+  
 }
 
 export default Home;

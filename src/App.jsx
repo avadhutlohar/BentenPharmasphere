@@ -1,11 +1,12 @@
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './components/Home';
-import About from './components/About';
-import Services from './components/Services';
-import Contact from './components/ContactUs';
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/ContactUs";
+import HospitalPharmacy from "./components/Services/HospitalPharmacy";
+import EthicsCommittee from "./components/Services/EthicsCommittee";
+import DocumentsArchiving from "./components/Services/DocumentsArchiving";
 
 function App() {
   return (
@@ -16,8 +17,14 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
+
             <Route path="/contact" element={<Contact />} />
+            <Route path="/services/hospital" element={<HospitalPharmacy />} />
+            <Route path="/services/ethics" element={<EthicsCommittee />} />
+            <Route
+              path="/services/archiving"
+              element={<DocumentsArchiving />}
+            />
           </Routes>
         </main>
         <Footer />
@@ -27,32 +34,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-// import Navbar from './components/Navbar';
-// import Footer from './components/Footer';
-// import Home from './components/Home';
-// // import About from './components/About';
-// // import WhyChooseUs from './components/WhyChooseUs';
-// // import ContactUs from './components/ContactUs';
-// function App() {
-//   return (
-//     <div className="min-h-screen flex flex-col">
-//       <Navbar />
-//       <main className="flex-grow">
-//         {/* <Hero />
-//         <ImageSection /> */}
-//         <Home />
-//         {/* <About />
-//         <WhyChooseUs />
-//         <ContactUs /> */}
-//       </main>
-//       <Footer />
-//     </div>
-//   );
-// }
-
-// export default App;
