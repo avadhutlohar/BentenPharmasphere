@@ -1,11 +1,13 @@
-import React from "react";
+
 import bgImage from "../assets/about-bg-img.jpg";
+import ContactForm from "./ContactForm";
 
 const ContactUs = () => {
   return (
+    <div>
     <section
       id="about"
-      className="py-16 bg-cover bg-center relative mb-36"
+      className="py-16 bg-cover bg-center relative mb-0"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="absolute  inset-0 bg-black bg-opacity-50"></div>
@@ -18,6 +20,11 @@ const ContactUs = () => {
        
       </div>
     </section>
+    <div className="mt-25">
+        <ContactForm />
+      </div>
+
+    </div>
   );
 };
 

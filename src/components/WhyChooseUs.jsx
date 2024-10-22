@@ -1,4 +1,4 @@
-import React from 'react';
+
 import bgImage from '../assets/why-choose-us.jpg';
 
 const WhyChooseUs = () => {

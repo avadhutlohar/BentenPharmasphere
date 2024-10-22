@@ -1,8 +1,8 @@
-import React from "react";
 import HomeBG from "../assets/HomeBG.jpg";
 import { CiCircleChevRight } from "react-icons/ci";
+import PropTypes from 'prop-types'; // Import PropTypes
 
-const Hero = () => {
+const Hero = ({ scrollToImageSection }) => {
   return (
     <div className="min-h-screen flex items-center relative">
       <div className="absolute inset-0 w-full h-full">
@@ -18,7 +18,10 @@ const Hero = () => {
           PHARMACIST TRAINING, PHARMACY CONSULTATION, DOCUMENT ARCHIVING AND
           ETHICS COMMITTEE REGISTRATION SERVICES
         </h1>
-        <button className="mt-20 w-56 h-16 font-semibold bg-blue-500 text-white px-4 py-2 rounded-md text-2xl">
+        <button
+          onClick={scrollToImageSection} // Attach the scroll function here
+          className="mt-20 w-56 h-16 font-semibold bg-blue-500 text-white px-4 py-2 rounded-md text-2xl"
+        >
           <span className="flex flex-row items-center justify-center gap-2">
             Get Started
             <CiCircleChevRight />
@@ -27,6 +30,11 @@ const Hero = () => {
       </div>
     </div>
   );
+};
+
+// Add prop types
+Hero.propTypes = {
+  scrollToImageSection: PropTypes.func.isRequired, // Validate the scroll function
 };
 
 export default Hero;
