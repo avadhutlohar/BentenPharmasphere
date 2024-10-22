@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
-import About from "./components/About";
+import AboutUs from "./components/AboutUs";
 import Contact from "./components/ContactUs";
 import HospitalPharmacy from "./components/Services/HospitalPharmacy";
 import EthicsCommittee from "./components/Services/EthicsCommittee";
@@ -16,7 +16,7 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<AboutUs />} />
 
             <Route path="/contact" element={<Contact />} />
             <Route path="/services/hospital" element={<HospitalPharmacy />} />
