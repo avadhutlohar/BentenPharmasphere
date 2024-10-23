@@ -54,9 +54,9 @@ function Footer() {
           </div>
         </div>
 
-        <div className="text-center text-sm text-gray-400 mt-12">
+        {/* <div className="text-center text-sm text-gray-400 mt-12">
           <p>Copyright © 2024 ICER | Designed with <span className="text-red-500">❤️</span> by Turtle Digital LLP</p>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

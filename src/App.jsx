@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
-import AboutUs from "./components/AboutUs";
-import Contact from "./components/ContactUs";
+import Home from "./components/Home/Home";
+import AboutUs from "./components/AboutUs/AboutUs";
+import Contact from "./components/ContactUs/ContactUs";
 import HospitalPharmacy from "./components/Services/HospitalPharmacy";
 import EthicsCommittee from "./components/Services/EthicsCommittee";
 import DocumentsArchiving from "./components/Services/DocumentsArchiving";
