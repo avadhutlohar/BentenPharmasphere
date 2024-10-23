@@ -28,7 +28,11 @@ const Hero = ({ onScrollToImageSection }) => {
 
       {/* Right Column - Illustration */}
       <div className="md:w-1/2 flex justify-center md:justify-end md:mt-0">
-        <img src={heroImage3} alt="Doctor Illustration" className="w-[60%] md:w-[70%] lg:w-[100%]" />
+        <img
+          src={heroImage3}
+          alt="Doctor Illustration"
+          className="w-full md:w-3/4 lg:w-full"
+        />
       </div>
     </section>
   );

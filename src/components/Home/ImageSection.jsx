@@ -9,10 +9,10 @@ import Icon6 from "../../assets/icon6.png";
 
 const ImageSection = () => {
   return (
-    <section className="flex flex-col md:flex-row items-start justify-between h-screen py-10 md:py-20 px-6 md:px-8">
+    <section className="flex flex-col md:flex-row items-start justify-between h-screen py-10 md:py-20 px-6 md:px-8 mb-48 md:mb-0">
       {/* Left Column - Illustration */}
-      <div className="md:w-1/2 flex justify-center">
-        <img src={heroImage2} alt="Doctor Illustration" className="h-auto w-[60%] md:w-[70%] lg:w-[85%]" />
+      <div className="md:w-1/2 flex justify-center items-center">
+        <img src={heroImage2} alt="Doctor Illustration" className="h-auto w-[80%] md:w-[70%] lg:w-[90%]" />
       </div>
 
       {/* Right Column - Services List */}
@@ -64,7 +64,7 @@ const ImageSection = () => {
           <div className="flex items-center space-x-4 bg-gray-100 p-4 md:p-6 rounded-lg shadow-md">
             <img src={Icon6} alt="Advisory Icon" className="w-10 h-10 md:w-12 md:h-12" />
             <h3 className="font-semibold text-base md:text-lg">
-            Documents Archiving
+              Documents Archiving
             </h3>
           </div>
         </div>

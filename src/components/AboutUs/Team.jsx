@@ -5,7 +5,7 @@ import expertIcon3 from "../../assets/expert3.webp";
 
 const Team = () => {
   return (
-    <section className="bg-white text-center py-10 md:py-12 lg:py-14 xl:py-16">
+    <section className="bg-white text-center py-10 md:py-12 lg:py-14 xl:py-16 ">
       <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-6 md:mb-8 lg:mb-10 xl:mb-12 px-4">
         Meet Our Experts
       </h2>
