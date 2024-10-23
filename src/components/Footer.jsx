@@ -26,11 +26,11 @@ function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-yellow-400">About</a></li>
-              <li><a href="#" className="hover:text-yellow-400">FAQs</a></li>
-              <li><a href="#" className="hover:text-yellow-400">Services</a></li>
-              <li><a href="#" className="hover:text-yellow-400">Testimonials</a></li>
-              <li><a href="#" className="hover:text-yellow-400">Contact Us</a></li>
+              <li><a href="#" className="hover:text-white">About</a></li>
+              <li><a href="#" className="hover:text-white">FAQs</a></li>
+              <li><a href="#" className="hover:text-white">Services</a></li>
+              <li><a href="#" className="hover:text-white">Testimonials</a></li>
+              <li><a href="#" className="hover:text-white">Contact Us</a></li>
             </ul>
           </div>
 
@@ -38,7 +38,7 @@ function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Business</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-yellow-400">Services</a></li>
+              <li><a href="#" className="hover:text-white">Services</a></li>
             </ul>
           </div>
 
@@ -46,10 +46,10 @@ function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-yellow-400">Home</a></li>
-              <li><a href="#" className="hover:text-yellow-400">About</a></li>
-              <li><a href="#" className="hover:text-yellow-400">Services</a></li>
-              <li><a href="#" className="hover:text-yellow-400">Contact</a></li>
+              <li><a href="#" className="hover:text-white">Home</a></li>
+              <li><a href="#" className="hover:text-white">About</a></li>
+              <li><a href="#" className="hover:text-white">Services</a></li>
+              <li><a href="#" className="hover:text-white">Contact</a></li>
             </ul>
           </div>
         </div>
