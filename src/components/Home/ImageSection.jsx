@@ -1,5 +1,6 @@
 import React from 'react';
-import heroImage2 from "../../assets/heroImg2.png";
+// import heroImage2 from "../../assets/heroImg2.png";
+import heroImage2 from "../../assets/2.jpg";
 import Icon1 from "../../assets/icon1.png";
 import Icon2 from "../../assets/icon2.png";
 import Icon3 from "../../assets/icon3.png";

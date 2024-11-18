@@ -43,8 +43,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="flex justify-between items-center py-4 px-8 bg-white z-20 relative">
-      <div className="text-2xl font-bold">
+    <nav className="absolute top-0 left-0 right-0 z-20 p-4 bg-white  shadow-md flex justify-between items-center">
+      <div className="text-2xl font-bold hover:text-blue-600">
         <Link to="/">BentenPharmasphere</Link>
       </div>
       {!isLargeScreen && (

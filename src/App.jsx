@@ -11,13 +11,12 @@ import DocumentsArchiving from "./components/Services/DocumentsArchiving";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col font-sans">
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow pt-16">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
-
             <Route path="/contact" element={<Contact />} />
             <Route path="/services/hospital" element={<HospitalPharmacy />} />
             <Route path="/services/ethics" element={<EthicsCommittee />} />

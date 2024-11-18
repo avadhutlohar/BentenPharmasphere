@@ -1,9 +1,9 @@
-import React from 'react';
-import heroImage3 from "../../assets/heroImg3.png";
+import React from "react";
+import heroImage3 from "../../assets/abc3.png";
 
 const Hero = ({ onScrollToImageSection }) => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-pink-50 to-white h-screen py-10 md:py-20 px-6 md:px-8">
+    <section className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-blue-100 to-white h-screen py-10 md:py-20 px-6 md:px-8">
       {/* Left Column - Text */}
       <div className="md:w-1/2 text-center md:text-left">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
@@ -20,7 +20,7 @@ const Hero = ({ onScrollToImageSection }) => {
         </p>
         <button
           onClick={onScrollToImageSection} // Call the scroll function
-          className="mt-6 bg-blue-600 text-white px-4 py-2 rounded-md md:px-6 md:py-3"
+          className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-md text-lg md:px-8 md:py-4"
         >
           Start your journey with us today
         </button>
