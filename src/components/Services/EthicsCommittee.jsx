@@ -1,53 +1,39 @@
-import React from 'react'
+import React from 'react';
 import bgImg from '../../assets/service2.svg';
 
 const EthicsCommittee = () => {
-  const services = [
-    {
-      title: 'Advisory and guidance',
-      description: 'We offer specialized advisory services for ethics committees to navigate complex ethical dilemmas and regulatory frameworks. Our expert guidance helps committees establish robust review processes, ensuring compliance with ethical standards while fostering integrity and accountability in clinical research.'
-    },
-    {
-      title: 'Ethics committee formation and setup',
-      description: 'We specialize in the formation and setup of ethics committees that align with your organization\'s objectives. Our approach includes defining roles, responsibilities, and procedures to ensure a thorough review process, fostering trust and integrity in your research initiatives.'
-    },
-    {
-      title: 'CDSCO and DHR Registration and Renewal',
-      description: 'Our team simplifies the registration and renewal processes with the Central Drugs Standard Control Organization (CDSCO) and the Department of Health Research (DHR). We ensure timely submissions and adherence to regulatory requirements, minimizing the risk of non-compliance.'
-    },
-    {
-      title: 'Member Changes intimation to CDSCO and DHR',
-      description: 'We facilitate the communication of any changes in ethics committee membership to CDSCO and DHR, ensuring that your organization\'s records are accurate and up-to-date. This service helps maintain compliance and transparency in your operations.'
-    },
-    {
-      title: 'Ethics committee SOP development',
-      description: 'We create customized Standard Operating Procedures (SOPs) for ethics committees to standardize processes and enhance operational efficiency. Our SOPs are designed to ensure compliance with ethical guidelines while promoting a thorough review of research proposals.'
-    },
-    {
-      title: 'GCP Training to Ethics Committee members',
-      description: 'Our comprehensive Good Clinical Practice (GCP) training equips ethics committee members with the necessary knowledge and skills to oversee clinical trials effectively. We focus on ethical considerations, regulatory requirements, and best practices to uphold the integrity of research activities.'
-    }
-  ];
+  const serviceDescription =
+    'We provide all types of comprehensive Ethics Committee-related services, including advisory support and documentation guidelines. We assist with the formation and setup of Ethics Committees, along with CDSCO and DHR registration and renewals. We also handle member changes and ensure proper intimation to CDSCO and DHR. Our services include the development of Ethics Committee SOPs and GCP training for committee members, ensuring compliance and maintaining ethical standards in clinical research.';
 
   return (
-    <div className="relative min-h-screen p-8">
-      <img src={bgImg} alt="Background" className="absolute inset-0 w-full h-full object-cover" style={{ opacity: 0.2 }} />
-      <div className="relative z-10 max-w-6xl mx-auto">
-        <h1 className="text-5xl font-bold text-center mb-8">ETHICS COMMITTEE SERVICES</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 bg-opacity-80 rounded-lg shadow-lg">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-2xl hover:scale-105 hover:border-2 hover:border-blue-500 transition-all duration-300 hover:text-blue-500"
-            >
-              <h2 className="text-xl font-semibold mb-4">✓ {service.title}</h2>
-              <p className="text-gray-600">{service.description}</p>
+    <section
+      id="ethics-committee"
+      className="flex flex-col md:flex-row items-center justify-between min-h-screen bg-gradient-to-r from-blue-100 to-blue-100"
+    >
+      <div className="flex flex-col md:flex-row w-full h-full items-center">
+        {/* Ethics Committee Services - Left Side */}
+        <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/2 p-4 md:p-6 lg:p-8 xl:p-10">
+          <div className="bg-white bg-opacity-30 backdrop-blur-lg rounded-xl shadow-lg p-8 md:p-10 lg:p-12 xl:p-14">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-8 md:mb-10 lg:mb-12 xl:mb-14 text-gray-800">
+              ETHICS COMMITTEE SERVICES
+            </h2>
+            <div className="text-lg md:text-xl lg:text-xl xl:text-2xl text-gray-700 text-center">
+              {serviceDescription}
             </div>
-          ))}
+          </div>
+        </div>
+
+        {/* Image - Right Side */}
+        <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/2 flex justify-center md:justify-end p-4 md:p-6 lg:p-8 xl:p-10">
+          <img
+            src={bgImg}
+            alt="Ethics Committee Illustration"
+            className="h-auto w-full md:w-3/4 lg:w-3/4 xl:w-full object-contain max-h-[75vh]"
+          />
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
 
-export default EthicsCommittee
+export default EthicsCommittee;

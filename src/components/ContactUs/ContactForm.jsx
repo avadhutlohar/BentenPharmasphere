@@ -13,9 +13,9 @@ const ContactForm = () => {
   return (
     <section 
       id="contact-form" 
-      className="flex flex-col md:flex-row items-center justify-between h-screen bg-gradient-to-r from-blue-100 to-blue-100"
+      className="flex flex-col md:flex-row items-center justify-between min-h-screen bg-gradient-to-r from-blue-100 to-blue-100"
     >
-      <div className="flex flex-col md:flex-row w-full h-full items-center">
+      <div className="flex flex-col md:flex-row w-full items-center">
         {/* Contact Form - Left Side */}
         <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/2 p-4 md:p-6 lg:p-8 xl:p-10">
           <div className="bg-white bg-opacity-30 backdrop-blur-lg rounded-xl shadow-lg p-8 md:p-10 lg:p-12 xl:p-14">
@@ -103,7 +103,7 @@ const ContactForm = () => {
           <img
             src={contactImage}
             alt="Contact Illustration"
-            className="h-full w-full md:h-3/4 md:w-3/4 lg:h-3/4 lg:w-3/4 xl:h-full xl:w-full object-contain"
+            className="h-auto w-full md:w-3/4 lg:w-3/4 xl:w-full max-h-[75vh] object-contain"
           />
         </div>
       </div>

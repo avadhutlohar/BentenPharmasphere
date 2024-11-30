@@ -1,53 +1,39 @@
-import React from 'react'
-import bgImg from '../../assets/service1.png';
+import React from "react";
+import bgImg from "../../assets/service1.png";
 
 const DocumentsArchiving = () => {
-    const services = [
-        {
-          title: 'Comprehensive Document Archiving Solutions',
-          description: 'We provide comprehensive document archiving solutions to ensure the secure and organized storage of all types of documents.'
-        },
-        {
-          title: 'Digitization of Documents',
-          description: 'Our digitization services enable the conversion of physical documents into digital formats, ensuring easy access and retrieval while reducing storage space.'
-        },
-        {
-          title: 'Indexing and Organization',
-          description: 'We provide indexing and organization services to ensure that your documents are properly categorized and easily searchable, facilitating efficient retrieval and management.'
-        },
-        {
-          title: 'Long-term Preservation',
-          description: 'Our long-term preservation services ensure that your documents are safely stored and protected from degradation, loss, or damage, guaranteeing their integrity and availability for future use.'
-        },
-        {
-          title: 'Compliance with Regulatory Requirements',
-          description: 'We ensure that our document archiving solutions comply with regulatory requirements and data protection standards, providing you with peace of mind and minimizing the risk of non-compliance.'
-        },
-        {
-          title: 'Easy Access and Retrieval',
-          description: 'Our document archiving solutions facilitate easy access and retrieval of your documents, enabling you to quickly locate and retrieve the information you need.'
-        }
-      ];
-    
-      return (
-        <div className="relative min-h-screen p-12">
-          <img src={bgImg} alt="Background" className="absolute inset-0 w-full h-full object-cover" style={{ opacity: 0.2 }} />
-          <div className="relative z-10 max-w-6xl mx-auto">
-            <h1 className="text-5xl font-bold text-center mb-12">DOCUMENTS ARCHIVING SERVICES</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 bg-opacity-80 rounded-lg shadow-lg">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-lg shadow-md p-6 hover:shadow-2xl hover:scale-105 hover:border-2 hover:border-blue-500 transition-all duration-300 hover:text-blue-500"
-                >
-                  <h2 className="text-xl font-semibold mb-4">✓ {service.title}</h2>
-                  <p className="text-gray-600">{service.description}</p>
-                </div>
-              ))}
-            </div>
+  const serviceDescription =
+    "We provide comprehensive document archiving solutions to ensure the secure and organized storage of all types of documents. Our services include digitization, indexing, and long-term preservation, facilitating easy access and retrieval while ensuring compliance with regulatory requirements and data protection standards.";
+
+  return (
+    <section
+      id="documents-archiving"
+      className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-blue-100 to-white min-h-screen"
+    >
+      <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row w-full h-full">
+        {/* Card Section (Left Side) */}
+        <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/2 p-4 md:p-6 lg:p-8 xl:p-10 flex items-center">
+          <div className="bg-white bg-opacity-30 backdrop-blur-lg rounded-xl shadow-lg p-8 md:p-10 lg:p-12 xl:p-14">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-8 md:mb-10 lg:mb-12 xl:mb-14 text-gray-800">
+              DOCUMENTS ARCHIVING SERVICES
+            </h1>
+            <p className="text-lg md:text-xl lg:text-xl xl:text-2xl text-gray-600 text-center">
+              {serviceDescription}
+            </p>
           </div>
         </div>
-      );
-}
 
-export default DocumentsArchiving
+        {/* Image Section (Right Side) */}
+        <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/2 flex justify-center p-4 md:p-6 lg:p-8 xl:p-10">
+          <img
+            src={bgImg}
+            alt="Document Archiving Illustration"
+            className="h-auto w-full md:w-3/4 lg:w-3/4 xl:w-full max-h-[75vh] object-contain"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default DocumentsArchiving;
