@@ -5,7 +5,7 @@ const Hero = ({ onScrollToImageSection }) => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-blue-100 to-white min-h-screen py-10 md:py-20 px-6 md:px-8">
       {/* Left Column - Text */}
-      <div className="md:w-2/3 text-center md:text-left">
+      <div className="md:w-1/2 text-center md:text-left md:pl-20">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
           Welcome to <br />
           <span className="text-blue-600">Benten Pharmasphere</span>
@@ -27,7 +27,7 @@ const Hero = ({ onScrollToImageSection }) => {
       </div>
 
       {/* Right Column - Illustration */}
-      <div className="md:w-1/3 flex justify-center md:justify-end mt-10 md:mt-0">
+      <div className="md:w-1/2 flex justify-end  md:justify-center mt-10 md:mt-0">
         <img
           src={heroImage3}
           alt="Doctor Illustration"

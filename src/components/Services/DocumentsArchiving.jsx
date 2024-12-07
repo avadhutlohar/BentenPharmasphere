@@ -1,5 +1,5 @@
 import React from "react";
-import bgImg from "../../assets/service1.png";
+import bgImg from "../../assets/document.png";
 
 const DocumentsArchiving = () => {
   const serviceDescription =

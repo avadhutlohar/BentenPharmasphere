@@ -1,13 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import contactImage from "../../assets/4.png";
 
 const ContactForm = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { 
+    register, 
+    handleSubmit, 
+    formState: { errors }, 
+    reset 
+  } = useForm();
+
+  const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
 
   const onSubmit = async (data) => {
-    console.log(data);
-    // Add your form submission logic here
+    try {
+      // Simulate form submission (replace with your actual submission logic)
+      console.log(data);
+      
+      // Show success message
+      setIsSubmitSuccessful(true);
+      
+      // Clear form fields
+      reset();
+
+      // Hide success message after 3 seconds
+      setTimeout(() => {
+        setIsSubmitSuccessful(false);
+      }, 3000);
+    } catch (error) {
+      console.error('Submission error:', error);
+      // Optionally handle submission error
+    }
   };
 
   return (
@@ -22,6 +45,19 @@ const ContactForm = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-8 md:mb-10 lg:mb-12 xl:mb-14 text-gray-800">
               Contact Us
             </h2>
+
+            {/* Success Message */}
+            {isSubmitSuccessful && (
+              <div 
+                className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" 
+                role="alert"
+              >
+                <span className="block sm:inline">
+                  Thank you for your message! We'll get back to you soon.
+                </span>
+              </div>
+            )}
+
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="space-y-6">
                 {/* Name Field */}
@@ -35,7 +71,13 @@ const ContactForm = () => {
                   <input
                     type="text"
                     id="name"
-                    {...register('name', { required: 'Name is required' })}
+                    {...register('name', { 
+                      required: 'Name is required',
+                      minLength: {
+                        value: 2,
+                        message: "Name must be at least 2 characters"
+                      }
+                    })}
                     className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-400 focus:border-blue-400"
                     placeholder="Enter your name"
                   />
@@ -66,6 +108,30 @@ const ContactForm = () => {
                   {errors.email && <small className="text-red-500">{errors.email.message}</small>}
                 </div>
 
+                {/* Mobile Number Field */}
+                <div>
+                  <label
+                    htmlFor="mobile"
+                    className="block text-lg md:text-xl lg:text-xl xl:text-2xl font-medium text-gray-700"
+                  >
+                    Your Mobile Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="mobile"
+                    {...register('mobile', { 
+                      required: 'Mobile number is required',
+                      pattern: {
+                        value: /^\d{10}$/,
+                        message: "Invalid mobile number (10 digits required)"
+                      }
+                    })}
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-400 focus:border-blue-400"
+                    placeholder="Enter your mobile number"
+                  />
+                  {errors.mobile && <small className="text-red-500">{errors.mobile.message}</small>}
+                </div>
+
                 {/* Message Field */}
                 <div>
                   <label
@@ -77,7 +143,13 @@ const ContactForm = () => {
                   <textarea
                     id="message"
                     rows="4"
-                    {...register('message', { required: 'Message is required' })}
+                    {...register('message', { 
+                      required: 'Message is required',
+                      minLength: {
+                        value: 10,
+                        message: "Message must be at least 10 characters"
+                      }
+                    })}
                     className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-400 focus:border-blue-400"
                     placeholder="Enter your message"
                   ></textarea>

@@ -1,5 +1,5 @@
 import React from 'react';
-import bgImg from '../../assets/service2.svg';
+import bgImg from '../../assets/ethics.png';
 
 const EthicsCommittee = () => {
   const serviceDescription =
