@@ -66,7 +66,7 @@ const ContactForm = () => {
                     htmlFor="name"
                     className="block text-lg md:text-xl lg:text-xl xl:text-2xl font-medium text-gray-700"
                   >
-                    Your Name
+                    Name
                   </label>
                   <input
                     type="text"
@@ -90,7 +90,7 @@ const ContactForm = () => {
                     htmlFor="email"
                     className="block text-lg md:text-xl lg:text-xl xl:text-2xl font-medium text-gray-700"
                   >
-                    Your Email
+                    Email
                   </label>
                   <input
                     type="email"
@@ -114,7 +114,7 @@ const ContactForm = () => {
                     htmlFor="mobile"
                     className="block text-lg md:text-xl lg:text-xl xl:text-2xl font-medium text-gray-700"
                   >
-                    Your Mobile Number
+                    Mobile Number
                   </label>
                   <input
                     type="tel"
@@ -138,22 +138,15 @@ const ContactForm = () => {
                     htmlFor="message"
                     className="block text-lg md:text-xl lg:text-xl xl:text-2xl font-medium text-gray-700"
                   >
-                    Your Message
+                    Message
                   </label>
                   <textarea
                     id="message"
                     rows="4"
-                    {...register('message', { 
-                      required: 'Message is required',
-                      minLength: {
-                        value: 10,
-                        message: "Message must be at least 10 characters"
-                      }
-                    })}
+                    {...register('message')}
                     className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-400 focus:border-blue-400"
                     placeholder="Enter your message"
                   ></textarea>
-                  {errors.message && <small className="text-red-500">{errors.message.message}</small>}
                 </div>
 
                 {/* Submit Button */}

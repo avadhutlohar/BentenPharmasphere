@@ -36,7 +36,7 @@ const HospitalPharmacy = () => {
       />
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Section Title */}
-        <h1 className="text-3xl md:text-5xl font-bold text-center mb-8 md:mb-12 text-gray-800">
+        <h1 className="text-3xl md:text-5xl font-bold text-center mb-8 md:mb-12 text-gray-800 hover:text-blue-500">
           HOSPITAL PHARMACY SERVICES
         </h1>
 

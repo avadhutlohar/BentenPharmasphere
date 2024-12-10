@@ -12,14 +12,15 @@ const DocumentsArchiving = () => {
     >
       <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row w-full h-full">
         {/* Card Section (Left Side) */}
-        <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/2 p-4 md:p-6 lg:p-8 xl:p-10 flex items-center">
-          <div className="bg-white bg-opacity-30 backdrop-blur-lg rounded-xl shadow-lg p-8 md:p-10 lg:p-12 xl:p-14">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-8 md:mb-10 lg:mb-12 xl:mb-14 text-gray-800">
+
+        <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/2 p-4 md:p-6 lg:p-8 xl:p-10">
+          <div className="bg-white bg-opacity-30 backdrop-blur-lg rounded-xl shadow-lg p-8 md:p-10 lg:p-12 xl:p-14 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-blue-500">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-8 md:mb-10 lg:mb-12 xl:mb-14 text-gray-800 transition duration-300 ease-in-out hover:text-blue-600">
               DOCUMENTS ARCHIVING SERVICES
-            </h1>
-            <p className="text-lg md:text-xl lg:text-xl xl:text-2xl text-gray-600 text-center">
+            </h2>
+            <div className="text-lg md:text-xl lg:text-xl xl:text-2xl text-gray-700 text-center">
               {serviceDescription}
-            </p>
+            </div>
           </div>
         </div>
 

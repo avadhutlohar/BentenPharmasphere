@@ -1,9 +1,9 @@
-import React from 'react';
-import bgImg from '../../assets/ethics.png';
+import React from "react";
+import bgImg from "../../assets/ethics.png";
 
 const EthicsCommittee = () => {
   const serviceDescription =
-    'We provide all types of comprehensive Ethics Committee-related services, including advisory support and documentation guidelines. We assist with the formation and setup of Ethics Committees, along with CDSCO and DHR registration and renewals. We also handle member changes and ensure proper intimation to CDSCO and DHR. Our services include the development of Ethics Committee SOPs and GCP training for committee members, ensuring compliance and maintaining ethical standards in clinical research.';
+    "We provide all types of comprehensive Ethics Committee-related services, including advisory support and documentation guidelines. We assist with the formation and setup of Ethics Committees, along with CDSCO and DHR registration and renewals. We also handle member changes and ensure proper intimation to CDSCO and DHR. Our services include the development of Ethics Committee SOPs and GCP training for committee members, ensuring compliance and maintaining ethical standards in clinical research.";
 
   return (
     <section
@@ -13,8 +13,8 @@ const EthicsCommittee = () => {
       <div className="flex flex-col md:flex-row w-full h-full items-center">
         {/* Ethics Committee Services - Left Side */}
         <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/2 p-4 md:p-6 lg:p-8 xl:p-10">
-          <div className="bg-white bg-opacity-30 backdrop-blur-lg rounded-xl shadow-lg p-8 md:p-10 lg:p-12 xl:p-14">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-8 md:mb-10 lg:mb-12 xl:mb-14 text-gray-800">
+          <div className="bg-white bg-opacity-30 backdrop-blur-lg rounded-xl shadow-lg p-8 md:p-10 lg:p-12 xl:p-14 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-blue-500">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-8 md:mb-10 lg:mb-12 xl:mb-14 text-gray-800 transition duration-300 ease-in-out hover:text-blue-600">
               ETHICS COMMITTEE SERVICES
             </h2>
             <div className="text-lg md:text-xl lg:text-xl xl:text-2xl text-gray-700 text-center">
