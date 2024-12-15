@@ -1,43 +1,76 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import contactImage from "../../assets/4.png";
+import emailjs from '@emailjs/browser';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactForm = () => {
-  const { 
-    register, 
-    handleSubmit, 
-    formState: { errors }, 
-    reset 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
   } = useForm();
 
-  const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
+  const [emailCountExceeded, setEmailCountExceeded] = useState(false);
+  const [loading, setLoading] = useState(false);  // Loading state
+
+  // Dummy email count (replace with real logic)
+  const emailCount = 150;
 
   const onSubmit = async (data) => {
+    // Check email count before sending the form
+    if (emailCount >= 200) {
+      setEmailCountExceeded(true);
+      reset()
+      return; // Prevent submission if count exceeds
+    }
+
+    // Show loader
+    setLoading(true);
+
     try {
-      // Simulate form submission (replace with your actual submission logic)
-      console.log(data);
-      
-      // Show success message
-      setIsSubmitSuccessful(true);
-      
+      const templateParams = {
+        name: data.name,
+        email: data.email,
+        mobile: data.mobile,
+        message: data.message,
+        to_name: "BentenPharmaSphere",
+      };
+
+      await emailjs.send(
+        "service_z8mqobn", 
+        "template_dru6tsi", 
+        templateParams,
+        "B0i315BPKJKbDHrIG" 
+      );
+
+      // Show success notification
+      toast.success("Message sent successfully!");
+
       // Clear form fields
       reset();
-
-      // Hide success message after 3 seconds
-      setTimeout(() => {
-        setIsSubmitSuccessful(false);
-      }, 3000);
+      setSubmitError(null); // Reset any errors on successful submission
     } catch (error) {
-      console.error('Submission error:', error);
-      // Optionally handle submission error
+      console.error("Submission error:", error);
+      setSubmitError("Failed to send your message. Please try again.");
+      toast.error("Failed to send your message. Please try again.");
+    } finally {
+      // Hide loader after submission
+      setLoading(false);
     }
   };
 
   return (
-    <section 
-      id="contact-form" 
+    <section
+      id="contact-form"
       className="flex flex-col md:flex-row items-center justify-between min-h-screen bg-gradient-to-r from-blue-100 to-blue-100"
     >
+      {/* Toast Container */}
+      <ToastContainer />
+
       <div className="flex flex-col md:flex-row w-full items-center">
         {/* Contact Form - Left Side */}
         <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/2 p-4 md:p-6 lg:p-8 xl:p-10">
@@ -46,15 +79,9 @@ const ContactForm = () => {
               Contact Us
             </h2>
 
-            {/* Success Message */}
-            {isSubmitSuccessful && (
-              <div 
-                className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" 
-                role="alert"
-              >
-                <span className="block sm:inline">
-                  Thank you for your message! We'll get back to you soon.
-                </span>
+            {emailCountExceeded && (
+              <div className="text-center text-red-500 mb-4">
+                Email count exceeded 200. Please contact us directly at <strong>+1234567890</strong>.
               </div>
             )}
 
@@ -71,12 +98,12 @@ const ContactForm = () => {
                   <input
                     type="text"
                     id="name"
-                    {...register('name', { 
-                      required: 'Name is required',
+                    {...register("name", {
+                      required: "Name is required",
                       minLength: {
                         value: 2,
-                        message: "Name must be at least 2 characters"
-                      }
+                        message: "Name must be at least 2 characters",
+                      },
                     })}
                     className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-400 focus:border-blue-400"
                     placeholder="Enter your name"
@@ -95,12 +122,12 @@ const ContactForm = () => {
                   <input
                     type="email"
                     id="email"
-                    {...register('email', { 
-                      required: 'Email is required',
+                    {...register("email", {
+                      required: "Email is required",
                       pattern: {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                        message: "Invalid email address"
-                      }
+                        message: "Invalid email address",
+                      },
                     })}
                     className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-400 focus:border-blue-400"
                     placeholder="Enter your email"
@@ -119,12 +146,12 @@ const ContactForm = () => {
                   <input
                     type="tel"
                     id="mobile"
-                    {...register('mobile', { 
-                      required: 'Mobile number is required',
+                    {...register("mobile", {
+                      required: "Mobile number is required",
                       pattern: {
                         value: /^\d{10}$/,
-                        message: "Invalid mobile number (10 digits required)"
-                      }
+                        message: "Invalid mobile number (10 digits required)",
+                      },
                     })}
                     className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-400 focus:border-blue-400"
                     placeholder="Enter your mobile number"
@@ -143,7 +170,7 @@ const ContactForm = () => {
                   <textarea
                     id="message"
                     rows="4"
-                    {...register('message')}
+                    {...register("message")}
                     className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-400 focus:border-blue-400"
                     placeholder="Enter your message"
                   ></textarea>
@@ -154,12 +181,20 @@ const ContactForm = () => {
                   <button
                     type="submit"
                     className="w-full px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:bg-blue-700 text-lg md:text-xl lg:text-xl xl:text-2xl"
+                    disabled={loading} // Disable the button when loading
                   >
-                    Submit
+                    {loading ? "Sending..." : "Submit"}
                   </button>
                 </div>
               </div>
             </form>
+
+            {/* Loader (Conditionally Rendered) */}
+            {loading && (
+              <div className="flex justify-center mt-4">
+                <div className="loader"></div>
+              </div>
+            )}
           </div>
         </div>
 
