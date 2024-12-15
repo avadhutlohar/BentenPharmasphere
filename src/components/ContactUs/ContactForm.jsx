@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import contactImage from "../../assets/4.png";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -15,7 +15,7 @@ const ContactForm = () => {
 
   const [submitError, setSubmitError] = useState(null);
   const [emailCountExceeded, setEmailCountExceeded] = useState(false);
-  const [loading, setLoading] = useState(false);  // Loading state
+  const [loading, setLoading] = useState(false); // Loading state
 
   // Dummy email count (replace with real logic)
   const emailCount = 150;
@@ -24,7 +24,7 @@ const ContactForm = () => {
     // Check email count before sending the form
     if (emailCount >= 200) {
       setEmailCountExceeded(true);
-      reset()
+      reset();
       return; // Prevent submission if count exceeds
     }
 
@@ -41,10 +41,10 @@ const ContactForm = () => {
       };
 
       await emailjs.send(
-        "service_z8mqobn", 
-        "template_dru6tsi", 
+        "service_z8mqobn",
+        "template_dru6tsi",
         templateParams,
-        "B0i315BPKJKbDHrIG" 
+        "B0i315BPKJKbDHrIG"
       );
 
       // Show success notification
@@ -69,7 +69,17 @@ const ContactForm = () => {
       className="flex flex-col md:flex-row items-center justify-between min-h-screen bg-gradient-to-r from-blue-100 to-blue-100"
     >
       {/* Toast Container */}
-      <ToastContainer />
+      <ToastContainer
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
 
       <div className="flex flex-col md:flex-row w-full items-center">
         {/* Contact Form - Left Side */}
@@ -81,7 +91,8 @@ const ContactForm = () => {
 
             {emailCountExceeded && (
               <div className="text-center text-red-500 mb-4">
-                Email count exceeded 200. Please contact us directly at <strong>+1234567890</strong>.
+                The email could not be sent. Please try again later or contact
+                us directly at <strong>+1234567890</strong>.
               </div>
             )}
 
@@ -108,7 +119,11 @@ const ContactForm = () => {
                     className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-400 focus:border-blue-400"
                     placeholder="Enter your name"
                   />
-                  {errors.name && <small className="text-red-500">{errors.name.message}</small>}
+                  {errors.name && (
+                    <small className="text-red-500">
+                      {errors.name.message}
+                    </small>
+                  )}
                 </div>
 
                 {/* Email Field */}
@@ -132,7 +147,11 @@ const ContactForm = () => {
                     className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-400 focus:border-blue-400"
                     placeholder="Enter your email"
                   />
-                  {errors.email && <small className="text-red-500">{errors.email.message}</small>}
+                  {errors.email && (
+                    <small className="text-red-500">
+                      {errors.email.message}
+                    </small>
+                  )}
                 </div>
 
                 {/* Mobile Number Field */}
@@ -156,7 +175,11 @@ const ContactForm = () => {
                     className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-400 focus:border-blue-400"
                     placeholder="Enter your mobile number"
                   />
-                  {errors.mobile && <small className="text-red-500">{errors.mobile.message}</small>}
+                  {errors.mobile && (
+                    <small className="text-red-500">
+                      {errors.mobile.message}
+                    </small>
+                  )}
                 </div>
 
                 {/* Message Field */}
