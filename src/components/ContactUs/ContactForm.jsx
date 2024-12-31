@@ -41,10 +41,10 @@ const ContactForm = () => {
       };
 
       await emailjs.send(
-        "service_z8mqobn",
-        "template_dru6tsi",
+        "service_y6m2hjh",
+        "template_q2alm41",
         templateParams,
-        "B0i315BPKJKbDHrIG"
+        "X5w0olrwd5KXDuY5C"
       );
 
       // Show success notification

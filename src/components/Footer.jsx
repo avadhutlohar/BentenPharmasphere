@@ -25,7 +25,7 @@ function Footer() {
           {/* Email Section */}
           <div className="flex flex-col items-center">
             <FaEnvelope className="text-2xl mb-2" />
-            <p className="text-sm">hello@katy.in</p>
+            <p className="text-sm">bentenpharma@gmail.com</p>
           </div>
         </div>
       </div>
